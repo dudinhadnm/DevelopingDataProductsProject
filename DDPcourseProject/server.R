@@ -9,12 +9,6 @@ shinyServer(function(input, output) {
     })
     output$plot1 <- renderPlot({
         caratInput <- input$sliderCarat
-        ##plot(diamonds$carat, diamonds$price, xlab = "carat", 
-        ##    ylab = "price", bty = "n", pch = 18,
-        ##    xlim = c(0, 6), ylim = c(300, 20000))
-        ##abline(model, col = "red", lwd = 2)
-        ##points(caratInput, model1pred(), col = "red", pch = 18, cex = 2)
-        ##p
         g <- ggplot(diamonds, aes(x= carat, y = price)) + geom_point(alpha=0.1, colour = "#00928B", shape =21) + geom_smooth(method=lm, se = FALSE, colour = "#A0097D")
         g <- g + xlim(0, 6) + ylim(300, 20000)
         dff <- data.frame(carat = caratInput,price = model1pred())

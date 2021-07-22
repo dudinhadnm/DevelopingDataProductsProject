@@ -58,7 +58,11 @@ shinyUI(fluidPage(
                                  p("Given the model and the 
                                    value of carats that was input in the slider 
                                    on the side bar, the price is predicted as shown:"),
-                                 code("predict(model, newdata = data.frame(carat = caratInput))"))
+                                 code("predict(model, newdata = data.frame(carat = caratInput))"),
+                                 h4("Other material"),
+                                 tags$a(href="https://github.com/dudinhadnm/DevelopingDataProductsProject/blob/master/DDPcourseProject/ui.R", "ui.R code on GitHub"),
+                                 br(),
+                                 tags$a(href="https://github.com/dudinhadnm/DevelopingDataProductsProject/blob/master/DDPcourseProject/server.R", "server.R code on GitHub"))
             )
         )
     )
